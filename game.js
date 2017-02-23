@@ -22,6 +22,7 @@ function horse1() {
 	}
 }*/
 
+// Non-repeated horse moving (all four horses), however speeds are not randomised
 function loop() {
 	interval = setInterval(moveHorse, 10);
 }
@@ -31,7 +32,7 @@ function moveHorse() {
 	var positionTop = horse1.offestTop;
 	var positionLeft = horse1.offsetLeft;
 	for (var num = 0; num < horse.length; num++) {
-		if (positionLeft >= window.innerWidth * 0.85 - 50){
+		if (positionLeft >= window.innerWidth * 0.85 - 50 - (num*window.innerWidth*0.02)){
 
 		} else {
 			horse[num].style.left = positionLeft + 1 + 'px';
