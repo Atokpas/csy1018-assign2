@@ -35,16 +35,16 @@ function moveHorse() {
 		var positionLeft = horse[num].offsetLeft;
 		if (positionLeft >= window.innerWidth * 0.15 && positionLeft <= window.innerWidth * 0.85 - 50 - (num*window.innerWidth*0.02) && positionTop <= window.innerHeight * 0.38 - 50 - (num*window.innerHeight * 0.04) && positionTop >= window.innerHeight * 0.05 - 50 - (num*window.innerHeight * 0.04)) {
 			horse[num].style.left = positionLeft + 1 + 'px';
-			console.log("MoveRight");
+			horse[num].className = 'horse runRight';
 		} else if (positionLeft >= window.innerWidth * 0.85 - 50 - (num*window.innerWidth*0.02) && positionLeft <= window.innerWidth * 0.95 - 50 - (num*window.innerWidth*0.02) && positionTop <= window.innerHeight * 0.85 - 50 - (num*window.innerHeight * 0.04) && positionTop >= window.innerHeight * 0.05 - 50 - (num*window.innerHeight * 0.04)) {
 			horse[num].style.top = positionTop + 1 + 'px';
-			console.log("MoveDown");
+			horse[num].className = 'horse runDown';
 		} else if (positionLeft >= window.innerWidth * 0.16 - 50 - (num*window.innerWidth*0.02) && positionLeft <= window.innerWidth * 0.95 - 50 - (num*window.innerWidth*0.02) && positionTop <= window.innerHeight * 0.98 - 50 - (num*window.innerHeight * 0.04) && positionTop >= window.innerHeight * 0.85 - 50 - (num*window.innerHeight * 0.04)) {
 			horse[num].style.left = positionLeft - 1 + 'px';
-			console.log("MoveLeft");
+			horse[num].className = 'horse runLeft';
 		} else if (positionLeft >= window.innerWidth * 0.01 - 50 - (num*window.innerWidth*0.02) && positionLeft <= window.innerWidth * 0.2 - 50 - (num*window.innerWidth*0.02) && positionTop <= window.innerHeight * 0.98 - 50 - (num*window.innerHeight * 0.04) && positionTop >= window.innerHeight * 0.2 - 50 - (num*window.innerHeight * 0.04)) {
 			horse[num].style.top = positionTop - 1 + 'px';
-			console.log("MoveUp");
+			horse[num].className = 'horse runUp';
 		}
 	}
 }
