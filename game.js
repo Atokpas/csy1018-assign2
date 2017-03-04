@@ -33,18 +33,21 @@ function moveHorse() {
 	for (var num = 0; num < horse.length; num++) {
 		var positionTop = horse[num].offsetTop;
 		var positionLeft = horse[num].offsetLeft;
-		if (positionLeft >= window.innerWidth * 0.15 && positionLeft <= window.innerWidth * 0.85 - 50 - (num*window.innerWidth*0.02) && positionTop <= window.innerHeight * 0.38 - 50 - (num*window.innerHeight * 0.04) && positionTop >= window.innerHeight * 0.05 - 50 - (num*window.innerHeight * 0.04)) {
+		if (positionLeft >= window.innerWidth * 0.15 && positionLeft <= window.innerWidth * 0.84 - 50 - (num*window.innerWidth*0.02) && positionTop <= window.innerHeight * 0.35 - 50 - (num*window.innerHeight * 0.04) && positionTop >= window.innerHeight * 0.05 - 50 - (num*window.innerHeight * 0.04)) {
 			horse[num].style.left = positionLeft + 1 + 'px';
 			horse[num].className = 'horse runRight';
-		} else if (positionLeft >= window.innerWidth * 0.85 - 50 - (num*window.innerWidth*0.02) && positionLeft <= window.innerWidth * 0.95 - 50 - (num*window.innerWidth*0.02) && positionTop <= window.innerHeight * 0.85 - 50 - (num*window.innerHeight * 0.04) && positionTop >= window.innerHeight * 0.05 - 50 - (num*window.innerHeight * 0.04)) {
+		} else if (positionLeft >= window.innerWidth * 0.84 - 50 - (num*window.innerWidth*0.02) && positionLeft <= window.innerWidth * 0.95 - 50 - (num*window.innerWidth*0.02) && positionTop <= window.innerHeight * 0.85 - 50 - (num*window.innerHeight * 0.04) && positionTop >= window.innerHeight * 0.05 - 50 - (num*window.innerHeight * 0.04)) {
 			horse[num].style.top = positionTop + 1 + 'px';
 			horse[num].className = 'horse runDown';
-		} else if (positionLeft >= window.innerWidth * 0.16 - 50 - (num*window.innerWidth*0.02) && positionLeft <= window.innerWidth * 0.95 - 50 - (num*window.innerWidth*0.02) && positionTop <= window.innerHeight * 0.98 - 50 - (num*window.innerHeight * 0.04) && positionTop >= window.innerHeight * 0.85 - 50 - (num*window.innerHeight * 0.04)) {
+		} else if (positionLeft >= window.innerWidth * 0.14 - 50 - (num*window.innerWidth*0.02) && positionLeft <= window.innerWidth * 0.95 - 50 - (num*window.innerWidth*0.02) && positionTop <= window.innerHeight * 0.98 - 50 - (num*window.innerHeight * 0.04) && positionTop >= window.innerHeight * 0.85 - 50 - (num*window.innerHeight * 0.04)) {
 			horse[num].style.left = positionLeft - 1 + 'px';
 			horse[num].className = 'horse runLeft';
 		} else if (positionLeft >= window.innerWidth * 0.01 - 50 - (num*window.innerWidth*0.02) && positionLeft <= window.innerWidth * 0.2 - 50 - (num*window.innerWidth*0.02) && positionTop <= window.innerHeight * 0.98 - 50 - (num*window.innerHeight * 0.04) && positionTop >= window.innerHeight * 0.2 - 50 - (num*window.innerHeight * 0.04)) {
 			horse[num].style.top = positionTop - 1 + 'px';
 			horse[num].className = 'horse runUp';
+		} else if (positionLeft >= window.innerWidth * 0.05 && positionLeft < window.innerWidth * 0.30 - 50 - (num*window.innerWidth*0.02) && positionTop <= window.innerHeight * 0.35 - 50 - (num*window.innerHeight * 0.04) && positionTop >= window.innerHeight * 0.05 - 50) {
+			horse[num].style.left = positionLeft + 1 + 'px';
+			horse[num].className = 'horse runRight';
 		}
 	}
 }
