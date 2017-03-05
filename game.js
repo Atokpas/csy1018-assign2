@@ -27,6 +27,8 @@ function loop() {
 	interval = setInterval(moveHorse, 2);
 }
 
+var raceOver = false;
+
 function moveHorse() {
 	var horse = document.getElementsByClassName('horse');
 
@@ -45,7 +47,7 @@ function moveHorse() {
 		} else if (positionLeft >= window.innerWidth * 0.05 - 50 - (num*window.innerWidth*0.02) && positionLeft <= window.innerWidth * 0.25 - 50 - (num*window.innerWidth*0.02) && positionTop <= window.innerHeight * 0.98 - 50 - (num*window.innerHeight * 0.04) && positionTop >= window.innerHeight * 0.08 - 50 + (num*window.innerHeight * 0.04)) {
 			horse[num].style.top = positionTop - 1 + 'px';
 			horse[num].className = 'horse runUp';
-		} else if (positionLeft >= window.innerWidth * 0.05 && positionLeft < window.innerWidth * 0.30 - 50 - (num*window.innerWidth*0.02) && positionTop <= window.innerHeight * 0.35 - 50 - (num*window.innerHeight * 0.04) && positionTop >= window.innerHeight * 0.05 - 50) {
+		} else if (positionLeft >= window.innerWidth * 0.05 && positionLeft < window.innerWidth * 0.25 - 50 && positionTop <= window.innerHeight * 0.35 - 50 - (num*window.innerHeight * 0.04) && positionTop >= window.innerHeight * 0.05 - 50) {
 			horse[num].style.left = positionLeft + 1 + 'px';
 			horse[num].className = 'horse runRight';
 		}
