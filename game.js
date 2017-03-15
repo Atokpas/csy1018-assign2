@@ -9,13 +9,17 @@ function loop() {
 	interval = setInterval(moveHorse, 40);
 	var startButton = document.getElementById('start');
 	startButton.removeEventListener('click', startRace);
+	var horse = document.getElementsByClassName('horse');
+	for (var num = 0; num < horse.length; num++) {
+	horse[num].style.left = window.innerWidth * 0.18 + 'px';
+	var raceOver = false;
+	}
 }
 
 var raceOver = false;
 
 function moveHorse() {
 	var horse = document.getElementsByClassName('horse');
-
 	for (var num = 0; num < horse.length; num++) {
 		var positionTop = horse[num].offsetTop;
 		var positionLeft = horse[num].offsetLeft;
@@ -37,6 +41,7 @@ function moveHorse() {
 			raceOver = true;
 			var startButton = document.getElementById('start');
 			startButton.addEventListener('click', startRace);
+			console.log("Race Over");
 		}
 	}
 }
