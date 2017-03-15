@@ -5,6 +5,9 @@ function startRace() {
 	loop();
 }
 
+var nearEndOfRace = true;
+var raceOver = false;
+
 function loop() {
 	interval = setInterval(moveHorse, 40);
 	var startButton = document.getElementById('start');
@@ -12,11 +15,10 @@ function loop() {
 	var horse = document.getElementsByClassName('horse');
 	for (var num = 0; num < horse.length; num++) {
 	horse[num].style.left = window.innerWidth * 0.18 + 'px';
-	var raceOver = false;
+	raceOver = false;
+	nearEndOfRace = false;
 	}
 }
-
-var raceOver = false;
 
 function moveHorse() {
 	var horse = document.getElementsByClassName('horse');
@@ -29,14 +31,15 @@ function moveHorse() {
 		} else if (raceOver == false && positionLeft >= window.innerWidth * 0.84 - 50 - (num*window.innerWidth*0.02) && positionLeft <= window.innerWidth * 0.95 - 50 - (num*window.innerWidth*0.02) && positionTop <= window.innerHeight * 0.85 - 50 - (num*window.innerHeight * 0.04) && positionTop >= window.innerHeight * 0.05 - 50 - (num*window.innerHeight * 0.04)) {
 			horse[num].style.top = positionTop + (16-num) + (Math.random() * 10) + 'px';
 			horse[num].className = 'horse runDown';
+			nearEndOfRace = true;
 		} else if (raceOver == false && positionLeft >= window.innerWidth * 0.08 - 50 + (num*window.innerWidth*0.02) && positionLeft <= window.innerWidth * 0.95 - 50 - (num*window.innerWidth*0.02) && positionTop <= window.innerHeight * 0.98 - 50 - (num*window.innerHeight * 0.04) && positionTop >= window.innerHeight * 0.85 - 50 - (num*window.innerHeight * 0.04)) {
 			horse[num].style.left = positionLeft - (16-num) + (Math.random() * 10) + 'px';
 			horse[num].className = 'horse runLeft';
 		} else if (positionLeft >= window.innerWidth * 0.05 - 50 - (num*window.innerWidth*0.02) && positionLeft <= window.innerWidth * 0.26 - (num*window.innerWidth*0.02) && positionTop <= window.innerHeight * 0.98 - 50 - (num*window.innerHeight * 0.04) && positionTop >= window.innerHeight * 0.08 - 50 + (num*window.innerHeight * 0.04)) {
 			horse[num].style.top = positionTop - (16-num) + (Math.random() * 10) + 'px';
 			horse[num].className = 'horse runUp';
-		} else if (positionLeft >= window.innerWidth * 0.05 && positionLeft < window.innerWidth * 0.34 - 50 && positionTop <= window.innerHeight * 0.35 - 50 - (num*window.innerHeight * 0.04) && positionTop >= window.innerHeight * 0.05 - 50) {
-			horse[num].style.left = positionLeft + (6-num) + 'px';
+		} else if (nearEndOfRace == true && positionLeft >= window.innerWidth * 0.05 && positionLeft < window.innerWidth * 0.34 - 50 && positionTop <= window.innerHeight * 0.35 - 50 - (num*window.innerHeight * 0.04) && positionTop >= window.innerHeight * 0.05 - 50) {
+			horse[num].style.left = positionLeft + (Math.random() * 10) + 'px';
 			horse[num].className = 'horse runRight';
 			raceOver = true;
 			var startButton = document.getElementById('start');
