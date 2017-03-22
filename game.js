@@ -46,6 +46,9 @@ function moveHorse() {
 			startButton.addEventListener('click', startRace);
 			console.log("Race Over");
 		}
+		if (raceOver == true && positionLeft >= window.innerWidth * 0.28 && positionLeft <= window.innerWidth * 0.34) {
+			horse[num].className = 'horse standRight';
+		}
 	}
 }
 
