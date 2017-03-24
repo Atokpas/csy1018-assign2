@@ -48,6 +48,10 @@ function moveHorse() {
 		}
 		if (raceOver == true && positionLeft >= window.innerWidth * 0.28 && positionLeft <= window.innerWidth * 0.34) {
 			horse[num].className = 'horse standRight';
+			console.log(horse[num]);
+			for (var position = 0; position < horse.length; position++) {
+				var elements = document.getElementsByClassName('horse'+[num]);
+			}
 		}
 	}
 }
